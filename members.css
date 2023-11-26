@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
+
+html {
+    background: #101010;
+}
+
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    font-family: poppins;
+    background-color: #202020;
+    color: whitesmoke;
+    font-size: 70px;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#loader.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+#loader .color {
+    color: #3498db;
+}
+
+body {
+    user-select: none;
+    margin: 0;
+    height: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    background: #171717;
+}
+.dot {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: moveDots 1s linear infinite, flash 5s alternate infinite;
+}
+
+@keyframes moveDots {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(random(0deg, 360deg));
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(random(0deg, 360deg));
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+}
+
+@keyframes flash {
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+
+
+
+
+
+.firstline {
+    font-size: 78px; 
+    font-weight: bold;
+
+}
+.secondline {
+    font-size: 28px;
+    color: whitesmoke;
+ 
+}
+
+
+  .header-content{
+    height: 100vh;
+    width: 100%;
+    float: left;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-family: raleway;
+    font-weight: 400;
+    letter-spacing: 1px;
+    flex-direction: column;
+    font-size: 50px;
+    z-index: 1;
+                text-align: center;
+            position: relative;
+}
+
+
+
+
+
+
+.txt-rotate {
+    display: inline-block;
+    color: #3498db;
+}
+
+.slash {
+    color: #3498db;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh; 
+}
+
+.image-container img {
+    height: 100%; 
+    border-radius: 0; 
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #202020;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-family: poppins;
+
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    font-family: poppins;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+
+
+
+
+
+.members-header {
+    position: absolute;
+    top: 20%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: center; 
+    color: whitesmoke; 
+    font-family: Poppins;
+}
+
+.members-header h1 {
+    font-size: 100px;
+    margin: 0; 
+}
+
+
+
+
+article {
+  --img-scale: 1.001;
+  --title-color: black;
+  --link-icon-translate: -20px;
+  --link-icon-opacity: 0;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: "";
+}
+
+article h2 {
+  margin: 0 0 18px 0;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  color: var(--title-color);
+  transition: color 0.3s ease-out;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  transform-origin: center;
+  transform: scale(var(--img-scale));
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-body {
+  padding: 24px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #28666e;
+}
+
+article a:focus {
+  outline: 1px dotted #28666e;
+}
+
+article a .icon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  transform: translateX(var(--link-icon-translate));
+  opacity: var(--link-icon-opacity);
+  transition: all 0.3s;
+}
+
+article:has(:hover, :focus) {
+  --img-scale: 1.1;
+  --title-color: #28666e;
+  --link-icon-translate: 0;
+  --link-icon-opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+
+
+
+.articles {
+    margin-top: 300px;
+    display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+@media screen and (max-width: 960px) {
+  article {
+    container: card/inline-size;
+  }
+  .article-body p {
+    display: none;
+  }
+}
+
+@container card (min-width: 380px) {
+  .article-wrapper {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+  .article-body {
+    padding-left: 0;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  figure img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+
+
